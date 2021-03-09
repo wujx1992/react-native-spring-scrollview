@@ -8,14 +8,15 @@
  */
 
 import React from "react";
-import { Text, StyleSheet, AsyncStorage } from "react-native";
+import { Text, StyleSheet } from "react-native";
+import AsyncStorage from '@react-native-community/async-storage'
 import { HeaderStatus } from "../RefreshHeader";
-import {NormalFooter} from "../NormalFooter";
+import { NormalFooter } from "../NormalFooter";
 
 const LoadingKey = "org.bolan9999.spring_scrollview.loading_time";
 
 export class WithLastDateFooter extends NormalFooter {
-  static style="stickyScrollView";
+  static style = "stickyScrollView";
   lastTime: Date;
   constructor(props) {
     super(props);
@@ -73,7 +74,7 @@ export class WithLastDateFooter extends NormalFooter {
       return `${this.lastTime.getMonth() + 1}-${this.lastTime.getDate()}`;
     } else {
       return `${this.lastTime.getMonth() +
-      1}-${this.lastTime.getDate()}-${this.lastTime.getFullYear()}`;
+        1}-${this.lastTime.getDate()}-${this.lastTime.getFullYear()}`;
     }
   }
 }
